@@ -1,0 +1,90 @@
+//une ligne égale une commande à taper dans le terminal
+// ceci n'est en aucun cas du code de programmation
+
+//permet de connaître le répertoire où l'on se trouve :
+pwd
+
+//permet de vider le terminal
+clear
+//on peut faire la même chose avec un clic droit dans le terminal et l'option
+//"Effacer"
+
+//vous pouvez auto compléter le nom d'un dossier ou d'un fichier
+//avec la touche tabulation
+
+//afficher la liste des fichiers dans le répertoire courant
+ls
+ls -al
+
+//se déplacer dans l'arborescence via le terminal
+cd nomdurepertoirequinousinteresse
+//revenir au répertoire parent
+cd ..
+
+//On peut utiliser la touche tabulation pour automatiquement complèter le nom d'un fichier ou d'un sous répertoire
+
+//On peut utiliser les touches flèches haut et bas du clavier pour retrouver d'ancienne commande taper précedemment
+
+//initialiser le répertoire ou l'on utilise git
+//définit votre utilisateur git de manière global
+git config --global user.name "tppro"
+git config --global user.author "Tristan PLUMET"
+git config --global user.email "tristan@plumet.com"
+
+//vérifier les paramètres utilisateur
+git config --list
+//(lettre q du clavier pour quitter)
+
+//initialisation du répertoire pour travailler avec git
+git init
+
+//voir l'état des fichiers
+git status
+
+//rajouter des fichiers à la prochaine sauvegarde dans git
+//ajoute tous les fichiers
+git add .
+git add *
+//ajoute index.html
+git add index.html
+//ajoute index.html et command_terminal.txt
+git add index.html command_terminal.txt
+
+//sauvegarder les fichiers ajouter dans git
+git commit -m "premier commit dans git"
+
+//voir la liste des différents commit (revision)
+git log
+
+//exemple de checkout
+//pour revenir à une version précise de nos fichiers
+git checkout a397bced65406384f1fb3a77fe39c8455544787e
+git checkout a397bced65406384f1fb3a77fe39c8455544787e index.html
+git checkout 663af796367225abab00961cbc64f033ec765a20 index.html
+
+//par défaut des le premier commit vous êtes sur la branche master
+//voir la liste des branches
+git branch
+//créer une branche à partir de la branche où l'on se trouve
+//copie la branch où l'on se trouve (par défaut master) dans une nouvelle branche
+git branch nomdelabranche
+//pour basculer sur une branche en particulier :
+git checkout nomdelabranche
+
+//fusionner des branches ensembles
+//ex: fusionner "codepromo" dans la branche "dev"
+//d'abord on checkout la branche "dev"
+git checkout dev
+//ensuite on fusionne avec la branche "codepromo"
+git merge codepromo
+
+//publier son code sur github.com
+git remote add origin git@github.com:tppro/cours_git.git
+//première fois
+git push --set-upstream origin master
+//pour les fois suivantes
+git push
+
+//récupérer le code d'un projet distant (ici pour l'exemple en provenance de github)
+git clone https://github.com/tppro/exercice_git.git .
+
